@@ -1,0 +1,288 @@
+:root {
+    --primary: #0d6efd;
+    --primary-dark: #0a58ca;
+    --hospital-blue: #1565c0;
+    --hospital-light: #e3f2fd;
+    --text-dark: #1a2b3c;
+    --white: #ffffff;
+    --shadow: 0 8px 24px rgba(21, 101, 192, 0.12);
+}
+
+* { box-sizing: border-box; }
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f9fc;
+    color: var(--text-dark);
+    margin: 0;
+}
+
+/* Public navbar */
+.public-nav {
+    background: var(--white);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    padding: 0.75rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.public-nav .navbar-brand {
+    font-weight: 700;
+    color: var(--hospital-blue) !important;
+    font-size: 1.25rem;
+}
+
+.brand-logo {
+    width: 42px;
+    height: 42px;
+    background: var(--hospital-light);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--hospital-blue);
+    font-size: 1.25rem;
+}
+
+.public-nav .nav-link {
+    color: var(--text-dark) !important;
+    font-weight: 500;
+    margin: 0 0.25rem;
+}
+
+.public-nav .nav-link:hover,
+.public-nav .nav-link.active {
+    color: var(--hospital-blue) !important;
+}
+
+.btn-hospital {
+    background: linear-gradient(135deg, var(--hospital-blue), var(--primary));
+    border: none;
+    color: white;
+    padding: 0.6rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-hospital:hover {
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(21, 101, 192, 0.35);
+}
+
+/* Hero */
+.hero {
+    background: linear-gradient(135deg, rgba(21,101,192,0.92), rgba(13,110,253,0.88)),
+                url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1200') center/cover;
+    color: white;
+    padding: 5rem 0;
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+}
+
+.hero h1 { font-size: 2.75rem; font-weight: 700; }
+.hero p { font-size: 1.15rem; opacity: 0.95; }
+
+/* Cards */
+.service-card, .doctor-card, .stat-card, .profile-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(21, 101, 192, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 100%;
+}
+
+.service-card:hover, .doctor-card:hover, .stat-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(21, 101, 192, 0.18);
+}
+
+.service-icon {
+    width: 64px;
+    height: 64px;
+    background: var(--hospital-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    color: var(--hospital-blue);
+    margin-bottom: 1rem;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.section-title h2 {
+    color: var(--hospital-blue);
+    font-weight: 700;
+}
+
+.section-title p { color: #6c757d; }
+
+/* Login page */
+.login-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1565c0 0%, #0d47a1 50%, #1976d2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+
+.login-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2.5rem;
+    max-width: 440px;
+    width: 100%;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+}
+
+.login-logo {
+    width: 70px;
+    height: 70px;
+    background: var(--hospital-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-size: 2rem;
+    color: var(--hospital-blue);
+}
+
+.role-tabs .btn {
+    border-radius: 8px;
+    font-size: 0.85rem;
+}
+
+.role-tabs .btn.active {
+    background: var(--hospital-blue);
+    color: white;
+    border-color: var(--hospital-blue);
+}
+
+/* Dashboard sidebar */
+.dashboard-layout { display: flex; min-height: 100vh; }
+
+.sidebar {
+    width: 260px;
+    background: linear-gradient(180deg, #0d47a1, #1565c0);
+    color: white;
+    padding: 1.5rem 0;
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 100;
+}
+
+.sidebar-brand {
+    text-align: center;
+    padding: 0 1rem 1.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    margin-bottom: 1rem;
+}
+
+.sidebar-brand h4 { margin: 0.5rem 0 0; font-size: 1rem; }
+.sidebar-brand small { opacity: 0.8; }
+
+.sidebar a {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: rgba(255,255,255,0.9);
+    padding: 0.85rem 1.5rem;
+    text-decoration: none;
+    transition: background 0.2s, padding-left 0.2s;
+}
+
+.sidebar a:hover, .sidebar a.active {
+    background: rgba(255,255,255,0.15);
+    color: white;
+    padding-left: 1.75rem;
+}
+
+.sidebar a i { width: 22px; text-align: center; }
+
+.dashboard-content {
+    margin-left: 260px;
+    flex: 1;
+    padding: 2rem;
+    background: #f5f9fc;
+}
+
+.stat-card {
+    text-align: center;
+}
+
+.stat-card .stat-icon {
+    font-size: 2rem;
+    color: var(--hospital-blue);
+    margin-bottom: 0.5rem;
+}
+
+.stat-card h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--hospital-blue);
+    margin: 0;
+}
+
+.stat-card p { margin: 0; color: #6c757d; font-size: 0.9rem; }
+
+.stat-card.pending { border-left: 4px solid #ffc107; }
+.stat-card.approved { border-left: 4px solid #198754; }
+.stat-card.rejected { border-left: 4px solid #dc3545; }
+
+.profile-card .avatar {
+    width: 80px;
+    height: 80px;
+    background: var(--hospital-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: var(--hospital-blue);
+}
+
+.badge-pending { background: #fff3cd; color: #856404; }
+.badge-approved { background: #d1e7dd; color: #0f5132; }
+.badge-rejected { background: #f8d7da; color: #842029; }
+.badge-completed { background: #cfe2ff; color: #084298; }
+
+.table-card {
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+}
+
+footer.site-footer {
+    background: #0d47a1;
+    color: white;
+    padding: 2.5rem 0 1rem;
+    margin-top: 4rem;
+}
+
+footer.site-footer a { color: rgba(255,255,255,0.85); text-decoration: none; }
+footer.site-footer a:hover { color: white; }
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    .dashboard-content { margin-left: 0; }
+    .dashboard-layout { flex-direction: column; }
+    .hero h1 { font-size: 2rem; }
+}

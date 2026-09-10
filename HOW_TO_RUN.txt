@@ -1,0 +1,71 @@
+================================================================================
+  WHY WEBSITE IS NOT SHOWING - READ THIS FIRST
+================================================================================
+
+The code IS in your project folder. It will NOT work if you:
+  X Double-click index.jsp or open file in browser (file:///)
+  X Only look at files in folder without starting Tomcat
+  X Skip database setup
+
+You MUST run through Apache Tomcat in Eclipse.
+
+================================================================================
+  STEP 1 - CREATE DATABASE (MySQL)
+================================================================================
+1. Open MySQL Workbench or command line
+2. Run file: database/healthcheck_schema.sql
+3. Check password in: src/main/java/com/healthcare/DBConnection.java
+   (default: root / aniket@2001)
+
+================================================================================
+  STEP 2 - ECLIPSE SETUP
+================================================================================
+1. Open Eclipse
+2. File -> Open Projects from File System
+3. Select folder: HealthCheckAppointmentManagmentSystem
+4. Right-click project -> Refresh (F5)
+5. Right-click project -> Project -> Clean...
+6. Right-click project -> Build Project
+
+================================================================================
+  STEP 3 - RUN ON TOMCAT
+================================================================================
+1. Window -> Show View -> Servers
+2. Right-click in Servers panel -> New -> Server -> Apache Tomcat v9.0
+3. Drag your project onto the Tomcat server (Add and Remove)
+4. Right-click Tomcat -> Start
+5. Wait until console shows "Server startup in ... ms"
+
+================================================================================
+  STEP 4 - OPEN IN BROWSER (CORRECT URL)
+================================================================================
+Open exactly:
+
+   http://localhost:8081/HealthCheckAppointmentManagmentSystem/
+
+   (Your Tomcat uses port 8081, not 8080)
+
+OR
+
+   http://localhost:8081/HealthCheckAppointmentManagmentSystem/index.jsp
+
+You should see BLUE login page - MediCare Hospital
+
+Home page (without login):
+   http://localhost:8080/HealthCheckAppointmentManagmentSystem/home.jsp
+
+================================================================================
+  IF STILL NOT SHOWING
+================================================================================
+A) 404 Error -> Tomcat not started OR wrong URL spelling
+B) Blank page -> Check Tomcat console for red errors
+C) Old admin-only page -> Project -> Clean, restart Tomcat
+D) Login not working -> Run healthcheck_schema.sql in MySQL
+E) ClassNotFoundException -> Build project again in Eclipse
+
+Demo login:
+  Admin:  admin@medicare.com  / admin123
+  Doctor: priya@medicare.com  / doctor123
+  Patient: Sign up first at signup.jsp
+
+================================================================================
